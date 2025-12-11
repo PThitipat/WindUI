@@ -4,7 +4,7 @@
     | |/ |/ / / _ \/ _  / /_/ // /  
     |__/|__/_/_//_/\_,_/\____/___/
     
-    v1.6.46  |  2025-08-29  |  Roblox UI Library for scripts
+    v1.6.47  |  2025-08-29  |  Roblox UI Library for scripts
     
     This script is NOT intended to be modified.
     To view the source code, see the `src/` folder on the official GitHub repository.
@@ -652,10 +652,12 @@ end
 
 local l
 if i.CanClose then
+local xIcon = b.Icon"x"
+local xIconData = xIcon and xIcon[2]
 l=e("ImageButton",{
-Image=b.Icon"x"[1],
-ImageRectSize=b.Icon"x"[2].ImageRectSize,
-ImageRectOffset=b.Icon"x"[2].ImageRectPosition,
+Image=xIcon and xIcon[1] or "",
+ImageRectSize=xIconData and xIconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=xIconData and xIconData.ImageRectPosition or Vector2.new(0,0),
 BackgroundTransparency=1,
 Size=UDim2.new(0,16,0,16),
 Position=UDim2.new(1,-g.UIPadding,0,g.UIPadding),
@@ -1435,10 +1437,12 @@ ah=ah or"Primary"
 local al=not ak and 10 or 99
 local am
 if af and af~=""then
+local iconResult = ab.Icon(af)
+local iconData = iconResult and iconResult[2]
 am=ac("ImageLabel",{
-Image=ab.Icon(af)[1],
-ImageRectSize=ab.Icon(af)[2].ImageRectSize,
-ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,
+Image=iconResult and iconResult[1] or "",
+ImageRectSize=iconData and iconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=iconData and iconData.ImageRectPosition or Vector2.new(0,0),
 Size=UDim2.new(0,21,0,21),
 BackgroundTransparency=1,
 ThemeTag={
@@ -1577,10 +1581,12 @@ ah=ah or"Input"
 local aj=10
 local ak
 if af and af~=""then
+local iconResult = ab.Icon(af)
+local iconData = iconResult and iconResult[2]
 ak=ac("ImageLabel",{
-Image=ab.Icon(af)[1],
-ImageRectSize=ab.Icon(af)[2].ImageRectSize,
-ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,
+Image=iconResult and iconResult[1] or "",
+ImageRectSize=iconData and iconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=iconData and iconData.ImageRectPosition or Vector2.new(0,0),
 Size=UDim2.new(0,21,0,21),
 BackgroundTransparency=1,
 ThemeTag={
@@ -2882,10 +2888,12 @@ function aa.New(ae,af,ag)
 local ah=10
 local ai
 if af and af~=""then
+local iconResult = ab.Icon(af)
+local iconData = iconResult and iconResult[2]
 ai=ac("ImageLabel",{
-Image=ab.Icon(af)[1],
-ImageRectSize=ab.Icon(af)[2].ImageRectSize,
-ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,
+Image=iconResult and iconResult[1] or "",
+ImageRectSize=iconData and iconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=iconData and iconData.ImageRectPosition or Vector2.new(0,0),
 Size=UDim2.new(0,21,0,21),
 BackgroundTransparency=1,
 ThemeTag={
@@ -3564,15 +3572,17 @@ BackgroundTransparency=1,
 AutomaticSize="XY",
 })
 
+local moveIcon = ab.Icon"move"
+local moveIconData = moveIcon and moveIcon[2]
 local aj=ac("Frame",{
 Size=UDim2.new(0,36,0,36),
 BackgroundTransparency=1,
 Name="Drag",
 },{
 ac("ImageLabel",{
-Image=ab.Icon"move"[1],
-ImageRectOffset=ab.Icon"move"[2].ImageRectPosition,
-ImageRectSize=ab.Icon"move"[2].ImageRectSize,
+Image=moveIcon and moveIcon[1] or "",
+ImageRectOffset=moveIconData and moveIconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=moveIconData and moveIconData.ImageRectSize or Vector2.new(0,0),
 Size=UDim2.new(0,18,0,18),
 BackgroundTransparency=1,
 Position=UDim2.new(0.5,0,0.5,0),
@@ -4274,10 +4284,12 @@ Hover=true,
 Scalable=true,
 }
 
+local mouseIcon = aa.Icon"mouse-pointer-click"
+local mouseIconData = mouseIcon and mouseIcon[2]
 af.UIElements.ButtonIcon=ab("ImageLabel",{
-Image=aa.Icon"mouse-pointer-click"[1],
-ImageRectOffset=aa.Icon"mouse-pointer-click"[2].ImageRectPosition,
-ImageRectSize=aa.Icon"mouse-pointer-click"[2].ImageRectSize,
+Image=mouseIcon and mouseIcon[1] or "",
+ImageRectOffset=mouseIconData and mouseIconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=mouseIconData and mouseIconData.ImageRectSize or Vector2.new(0,0),
 BackgroundTransparency=1,
 Parent=af.ButtonFrame.UIElements.Main,
 Size=UDim2.new(0,20,0,20),
@@ -4326,14 +4338,16 @@ local ai={}
 local aj=13
 local ak
 if af and af~=""then
+local iconResult = ab.Icon(af)
+local iconData = iconResult and iconResult[2]
 ak=ac("ImageLabel",{
 Size=UDim2.new(1,-7,1,-7),
 BackgroundTransparency=1,
 AnchorPoint=Vector2.new(0.5,0.5),
 Position=UDim2.new(0.5,0,0.5,0),
-Image=ab.Icon(af)[1],
-ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,
-ImageRectSize=ab.Icon(af)[2].ImageRectSize,
+Image=iconResult and iconResult[1] or "",
+ImageRectOffset=iconData and iconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=iconData and iconData.ImageRectSize or Vector2.new(0,0),
 ImageTransparency=1,
 ImageColor3=Color3.new(0,0,0),
 })
@@ -4447,14 +4461,16 @@ local ai={}
 af=af or"check"
 
 local aj=10
+local iconResult = ab.Icon(af)
+local iconData = iconResult and iconResult[2]
 local ak=ac("ImageLabel",{
 Size=UDim2.new(1,-10,1,-10),
 BackgroundTransparency=1,
 AnchorPoint=Vector2.new(0.5,0.5),
 Position=UDim2.new(0.5,0,0.5,0),
-Image=ab.Icon(af)[1],
-ImageRectOffset=ab.Icon(af)[2].ImageRectPosition,
-ImageRectSize=ab.Icon(af)[2].ImageRectSize,
+Image=iconResult and iconResult[1] or "",
+ImageRectOffset=iconData and iconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=iconData and iconData.ImageRectSize or Vector2.new(0,0),
 ImageTransparency=1,
 ImageColor3=Color3.new(1,1,1),
 })
@@ -5092,10 +5108,12 @@ am.UIElements.Dropdown.AnchorPoint=Vector2.new(1,0.5)
 
 
 
+local chevronsIcon = af.Icon"chevrons-up-down"
+local chevronsIconData = chevronsIcon and chevronsIcon[2]
 ag("ImageLabel",{
-Image=af.Icon"chevrons-up-down"[1],
-ImageRectOffset=af.Icon"chevrons-up-down"[2].ImageRectPosition,
-ImageRectSize=af.Icon"chevrons-up-down"[2].ImageRectSize,
+Image=chevronsIcon and chevronsIcon[1] or "",
+ImageRectOffset=chevronsIconData and chevronsIconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=chevronsIconData and chevronsIconData.ImageRectSize or Vector2.new(0,0),
 Size=UDim2.new(0,18,0,18),
 Position=UDim2.new(1,-12,0.5,0),
 ThemeTag={
@@ -5756,10 +5774,12 @@ Name="Button",
 ae("UIScale",{
 Scale=1,
 }),
+local copyIcon = ac.Icon"copy"
+local copyIconData = copyIcon and copyIcon[2]
 ae("ImageLabel",{
-Image=ac.Icon"copy"[1],
-ImageRectSize=ac.Icon"copy"[2].ImageRectSize,
-ImageRectOffset=ac.Icon"copy"[2].ImageRectPosition,
+Image=copyIcon and copyIcon[1] or "",
+ImageRectSize=copyIconData and copyIconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=copyIconData and copyIconData.ImageRectPosition or Vector2.new(0,0),
 BackgroundTransparency=1,
 AnchorPoint=Vector2.new(0.5,0.5),
 Position=UDim2.new(0.5,0,0.5,0),
@@ -5879,15 +5899,17 @@ ac.AddSignal(ap.MouseButton1Click,function()
 if ak then
 ak()
 local as=ac.Icon"check"
-ap.Button.ImageLabel.Image=as[1]
-ap.Button.ImageLabel.ImageRectSize=as[2].ImageRectSize
-ap.Button.ImageLabel.ImageRectOffset=as[2].ImageRectPosition
+local asData = as and as[2]
+ap.Button.ImageLabel.Image=as and as[1] or ""
+ap.Button.ImageLabel.ImageRectSize=asData and asData.ImageRectSize or Vector2.new(0,0)
+ap.Button.ImageLabel.ImageRectOffset=asData and asData.ImageRectPosition or Vector2.new(0,0)
 
 task.wait(1)
 local at=ac.Icon"copy"
-ap.Button.ImageLabel.Image=at[1]
-ap.Button.ImageLabel.ImageRectSize=at[2].ImageRectSize
-ap.Button.ImageLabel.ImageRectOffset=at[2].ImageRectPosition
+local atData = at and at[2]
+ap.Button.ImageLabel.Image=at and at[1] or ""
+ap.Button.ImageLabel.ImageRectSize=atData and atData.ImageRectSize or Vector2.new(0,0)
+ap.Button.ImageLabel.ImageRectOffset=atData and atData.ImageRectPosition or Vector2.new(0,0)
 end
 end)
 return am
@@ -6705,6 +6727,8 @@ aj.Size=UDim2.new(0,ai.IconSize,0,ai.IconSize)
 end
 end
 
+local chevronDownIcon = aa.Icon"chevron-down"
+local chevronDownIconData = chevronDownIcon and chevronDownIcon[2]
 local ak=ac("Frame",{
 Size=UDim2.new(0,ai.IconSize,0,ai.IconSize),
 BackgroundTransparency=1,
@@ -6713,9 +6737,9 @@ Visible=false
 ac("ImageLabel",{
 Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
-Image=aa.Icon"chevron-down"[1],
-ImageRectSize=aa.Icon"chevron-down"[2].ImageRectSize,
-ImageRectOffset=aa.Icon"chevron-down"[2].ImageRectPosition,
+Image=chevronDownIcon and chevronDownIcon[1] or "",
+ImageRectSize=chevronDownIconData and chevronDownIconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=chevronDownIconData and chevronDownIconData.ImageRectPosition or Vector2.new(0,0),
 ThemeTag={
 ImageColor3="Icon",
 },
@@ -7299,11 +7323,13 @@ VerticalAlignment="Center",
 HorizontalAlignment="Center",
 FillDirection="Vertical",
 }),
+local frownIcon = ac.Icon"frown"
+local frownIconData = frownIcon and frownIcon[2]
 ae("ImageLabel",{
 Size=UDim2.new(0,48,0,48),
-Image=ac.Icon"frown"[1],
-ImageRectOffset=ac.Icon"frown"[2].ImageRectPosition,
-ImageRectSize=ac.Icon"frown"[2].ImageRectSize,
+Image=frownIcon and frownIcon[1] or "",
+ImageRectOffset=frownIconData and frownIconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=frownIconData and frownIconData.ImageRectSize or Vector2.new(0,0),
 ThemeTag={
 ImageColor3="Icon"
 },
@@ -7420,12 +7446,14 @@ Size=UDim2.new(0,al.IconSize,0,al.IconSize),
 BackgroundTransparency=1,
 Visible=false
 },{
+local chevronDownIcon2 = ac.Icon"chevron-down"
+local chevronDownIconData2 = chevronDownIcon2 and chevronDownIcon2[2]
 ae("ImageLabel",{
 Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
-Image=ac.Icon"chevron-down"[1],
-ImageRectSize=ac.Icon"chevron-down"[2].ImageRectSize,
-ImageRectOffset=ac.Icon"chevron-down"[2].ImageRectPosition,
+Image=chevronDownIcon2 and chevronDownIcon2[1] or "",
+ImageRectSize=chevronDownIconData2 and chevronDownIconData2.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=chevronDownIconData2 and chevronDownIconData2.ImageRectPosition or Vector2.new(0,0),
 ThemeTag={
 ImageColor3="Icon",
 },
@@ -7606,10 +7634,12 @@ FontFace=Font.new(ac.Font,Enum.FontWeight.Regular),
 TextSize=17,
 })
 
+local xIcon2 = ac.Icon"x"
+local xIconData2 = xIcon2 and xIcon2[2]
 local al=ae("ImageLabel",{
-Image=ac.Icon"x"[1],
-ImageRectSize=ac.Icon"x"[2].ImageRectSize,
-ImageRectOffset=ac.Icon"x"[2].ImageRectPosition,
+Image=xIcon2 and xIcon2[1] or "",
+ImageRectSize=xIconData2 and xIconData2.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=xIconData2 and xIconData2.ImageRectPosition or Vector2.new(0,0),
 BackgroundTransparency=1,
 ThemeTag={
 ImageColor3="Text",
@@ -7679,10 +7709,12 @@ ae("Frame",{
 Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
 },{
+local searchIcon = ac.Icon"search"
+local searchIconData = searchIcon and searchIcon[2]
 ae("ImageLabel",{
-Image=ac.Icon"search"[1],
-ImageRectSize=ac.Icon"search"[2].ImageRectSize,
-ImageRectOffset=ac.Icon"search"[2].ImageRectPosition,
+Image=searchIcon and searchIcon[1] or "",
+ImageRectSize=searchIconData and searchIconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=searchIconData and searchIconData.ImageRectPosition or Vector2.new(0,0),
 BackgroundTransparency=1,
 ThemeTag={
 ImageColor3="Icon",
@@ -7804,10 +7836,12 @@ PaddingLeft=UDim.new(0,aj.Padding),
 PaddingRight=UDim.new(0,aj.Padding),
 PaddingBottom=UDim.new(0,aj.Padding-2),
 }),
+local dynamicIcon = ac.Icon(as)
+local dynamicIconData = dynamicIcon and dynamicIcon[2]
 ae("ImageLabel",{
-Image=ac.Icon(as)[1],
-ImageRectSize=ac.Icon(as)[2].ImageRectSize,
-ImageRectOffset=ac.Icon(as)[2].ImageRectPosition,
+Image=dynamicIcon and dynamicIcon[1] or "",
+ImageRectSize=dynamicIconData and dynamicIconData.ImageRectSize or Vector2.new(0,0),
+ImageRectOffset=dynamicIconData and dynamicIconData.ImageRectPosition or Vector2.new(0,0),
 BackgroundTransparency=1,
 ThemeTag={
 ImageColor3="Text",
