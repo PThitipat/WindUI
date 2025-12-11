@@ -8187,6 +8187,10 @@ AnchorPoint=Vector2.new(0.5,0.5),
 ImageTransparency=1,
 })
 })
+local expandIcon = af.Icon"expand"
+local fallbackIcon = af.Icon"maximize"
+local iconData = (expandIcon and expandIcon[2]) or (fallbackIcon and fallbackIcon[2])
+local iconImage = (expandIcon and expandIcon[1]) or (fallbackIcon and fallbackIcon[1] or "")
 local au=af.NewRoundFrame(ao.UICorner,"Squircle",{
 Size=UDim2.new(1,0,1,0),
 ImageTransparency=1,
@@ -8196,9 +8200,9 @@ Active=false,
 },{
 ag("ImageLabel",{
 Size=UDim2.new(0,70,0,70),
-Image=af.Icon"expand"[1],
-ImageRectOffset=af.Icon"expand"[2].ImageRectPosition,
-ImageRectSize=af.Icon"expand"[2].ImageRectSize,
+Image=iconImage,
+ImageRectOffset=iconData and iconData.ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=iconData and iconData.ImageRectSize or Vector2.new(0,0),
 BackgroundTransparency=1,
 Position=UDim2.new(0.5,0,0.5,0),
 AnchorPoint=Vector2.new(0.5,0.5),
